@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use App\Models\Karyawan;
 
 
@@ -27,10 +28,11 @@ class KaryawanController extends Controller
             'nik' => 'required',
             'jabatan' => 'required',
             'alamat' => 'required',
-            'no_telp' => 'required',
+            'no_hp' => 'required',
             'email' => 'required',
             'status' => 'required',
-            'foto' => 'required',
+            #make foto default value = 1
+            'foto' => 'nullable',
         ]);
 
         if ($validator->fails()) {
@@ -42,7 +44,7 @@ class KaryawanController extends Controller
             'nik' => $request->nik,
             'jabatan' => $request->jabatan,
             'alamat' => $request->alamat,
-            'no_telp' => $request->no_telp,
+            'no_hp' => $request->no_hp,
             'email' => $request->email,
             'status' => $request->status,
             'foto' => $request->foto
@@ -67,7 +69,7 @@ class KaryawanController extends Controller
             'nik' => $request->nik,
             'jabatan' => $request->jabatan,
             'alamat' => $request->alamat,
-            'no_telp' => $request->no_telp,
+            'no_hp' => $request->no_hp,
             'email' => $request->email,
             'status' => $request->status,
             'foto' => $request->foto

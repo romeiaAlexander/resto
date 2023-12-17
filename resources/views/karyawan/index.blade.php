@@ -35,7 +35,7 @@
                     <td>{{ $row->foto }}</td>
                     <td>
                         <form action="{{ route('karyawan.destroy', $row->id) }}" method="post">
-                            <a href="#" class="btn btn-sm btn-warning">Edit</a>
+                            <a href="{{ route('karyawan.edit', $row->id) }}" class="btn btn-sm btn-warning">Edit</a>
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</button>
